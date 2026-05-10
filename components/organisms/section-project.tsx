@@ -13,7 +13,7 @@ import {
   TableHeader,
   TableRow
 } from '@/components/molecules/table'
-import { DialogMedia } from '@/components/organisms/dialog-media'
+import { DialogLightbox } from '@/components/organisms/dialog-lightbox'
 import { clientEntries } from '@/constants/client'
 import { appTimeZone } from '@/constants/date'
 import { profileEntries } from '@/constants/profile'
@@ -93,11 +93,11 @@ const SectionProject = forwardRef<SectionProjectRef, SectionProjectProps>((props
         </TableBody>
       </Table>
       {media[0] && (
-        <DialogMedia mediaEntry={media[0]}>
+        <DialogLightbox currentIndex={0} mediaEntries={media}>
           <button>
             <Media mediaEntry={media[0]} isHover />
           </button>
-        </DialogMedia>
+        </DialogLightbox>
       )}
       {!!desc && (
         <div className={cn(styles.desc())}>

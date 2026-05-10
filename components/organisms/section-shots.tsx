@@ -7,7 +7,7 @@ import { Hypertext } from '@/components/atoms/hypertext'
 import { Icon } from '@/components/atoms/icon'
 import { Media } from '@/components/atoms/media'
 import { Section } from '@/components/molecules/section'
-import { DialogMedia } from '@/components/organisms/dialog-media'
+import { DialogLightbox } from '@/components/organisms/dialog-lightbox'
 import { shotEntries } from '@/constants/shots'
 import { textStyles } from '@/constants/theme'
 import { cn, cva, VariantProps } from '@/utils/theme'
@@ -63,11 +63,11 @@ const SectionShots = forwardRef<SectionShotsRef, SectionShotsProps>((props, ref)
         {shotEntries.map((mediaEntry, index) => {
           const key = `media-${index}`
           return (
-            <DialogMedia key={key} mediaEntry={mediaEntry}>
+            <DialogLightbox key={key} currentIndex={index} mediaEntries={shotEntries}>
               <button className={cn(styles.media())}>
                 <Media aspect="square" fill="cover" mediaEntry={mediaEntry} isHover />
               </button>
-            </DialogMedia>
+            </DialogLightbox>
           )
         })}
       </div>
