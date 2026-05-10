@@ -10,7 +10,7 @@ const jobEntries: JobEntry[] = [
     title: 'Senior Software Engineer',
     location: 'Toronto, Ontario, Canada · Remote',
     startDate: fromZonedTime('2024-12-16', appTimeZone),
-    endDate: undefined,
+    endDate: fromZonedTime('2025-06-01', appTimeZone),
     skills: []
   },
   {
