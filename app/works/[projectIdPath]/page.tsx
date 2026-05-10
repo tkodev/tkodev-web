@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { FC } from 'react'
 import { camelCase, kebabCase } from 'change-case'
-import { SectionContact } from '@/components/organisms/section-contact'
+import { SectionReach } from '@/components/organisms/section-reach'
 import { SectionFrames } from '@/components/organisms/section-frames'
 import { SectionMedia } from '@/components/organisms/section-media'
 import { SectionProject } from '@/components/organisms/section-project'
@@ -38,7 +38,7 @@ const Page: FC<PageProps> = async (props) => {
       <SectionFrames id="frames-desktop" frameEntries={desktopEntries} />
       <SectionFrames id="frames-mobile" frameEntries={mobileEntries} isParallax />
       <SectionMedia id="media" mediaEntries={mediaEntries} />
-      <SectionContact id="contact" />
+      <SectionReach id="contact" />
     </Main>
   )
 }

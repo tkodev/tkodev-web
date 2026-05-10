@@ -1,14 +1,12 @@
 import { FC } from 'react'
-import { SectionReach } from '@/components/organisms/section-reach'
-import { SectionProjects } from '@/components/organisms/section-projects'
+import { SectionContact } from '@/components/organisms/section-contact'
 import { Main } from '@/components/sections/main'
 import { PageProps } from '@/types/layout'
 
 const Page: FC<PageProps> = async () => {
   return (
     <Main>
-      <SectionProjects id="works" />
-      <SectionReach id="contact" />
+      <SectionContact id="contact" />
     </Main>
   )
 }
