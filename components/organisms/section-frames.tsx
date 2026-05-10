@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'motion/react'
 import { Bg } from '@/components/atoms/bg'
 import { Frame } from '@/components/atoms/frame'
 import { Section } from '@/components/molecules/section'
-import { DialogMedia } from '@/components/organisms/dialog-media'
+import { DialogLightbox } from '@/components/organisms/dialog-lightbox'
 import { MediaEntry } from '@/types/media'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
@@ -65,11 +65,11 @@ const SectionFrames = forwardRef<SectionFramesRef, SectionFramesProps>((props, r
               ? { y: isFirst ? translateFirst : isLast ? translateThird : 0 }
               : {}
           return (
-            <DialogMedia key={`frame-${index}`} mediaEntry={frameEntry}>
+            <DialogLightbox key={`frame-${index}`} currentIndex={index} mediaEntries={frameEntries}>
               <motion.button className={cn(styles.item({ frameId }))} style={style}>
                 <Frame mediaEntry={frameEntry} />
               </motion.button>
-            </DialogMedia>
+            </DialogLightbox>
           )
         })}
       </div>

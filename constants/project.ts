@@ -1271,6 +1271,20 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     media: [
       {
         type: 'image',
+        src: '/images/projects/industrial-design/Bekant_Cabinet_2026-May-10_02-26-22PM-000_CustomizedView10916433213.png',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Bekant Server Rack for NAS, SFF Servers, serving LLM and Docker Apps with UPS protection'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/industrial-design/cf6d4327-aaba-47f1-83bc-4ad2aa772854.PNG',
+        width: 1200,
+        height: 1200,
+        alt: '3D Modeling and Industrial Design - Bekant Server Rack for NAS, SFF Servers, serving LLM and Docker Apps with UPS protection'
+      },
+      {
+        type: 'image',
         src: '/images/projects/industrial-design/modern-build_2024-dec-15_11-10-28pm-000_customizedview2748624882.png',
         width: 1200,
         height: 1200,

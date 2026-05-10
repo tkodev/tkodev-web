@@ -16,6 +16,16 @@ body {
   color-scheme: dark;
 }
 
+/* Custom cursor */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+  a, button, [role="button"], input, select, textarea, label {
+    cursor: none !important;
+  }
+}
+
 /* Hide number arrows on inputs */
 .hide-number-arrows::-webkit-inner-spin-button,
 .hide-number-arrows::-webkit-outer-spin-button {
