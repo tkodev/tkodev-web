@@ -1,16 +1,11 @@
 @import 'tailwindcss';
-@config "../../tailwind.config.ts";
+@import './colors.css';
+@import './helpers.css';
 
-@layer base {
-	:root {
-		--shadow-xs: 0px 1px 2px 0px rgba(0, 0, 0, 0.06), 0px 1px 3px 0px rgba(0, 0, 0, 0.10);
-		--shadow-sm: 0px 2px 4px 0px rgba(0, 0, 0, 0.06), 0px 4px 6px 0px rgba(0, 0, 0, 0.10);
-		--shadow-md: 0px 10px 15px 0px rgba(0, 0, 0, 0.10), 0px 4px 6px 0px rgba(0, 0, 0, 0.05);
-		--shadow-lg: 0px 20px 25px 0px rgba(0, 0, 0, 0.10), 0px 10px 10px 0px rgba(0, 0, 0, 0.04);
-		--shadow-xl: 0px 25px 50px 0px rgba(0, 0, 0, 0.25);
-		--shadow-inner: 0px 4px 4px 0px rgba(0, 0, 0, 0.06) inset;
-	}
-}
+@plugin 'tailwindcss-animate';
+@plugin 'tailwind-gradient-mask-image';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
 	.light {
@@ -43,8 +38,6 @@
 		--destructive-foreground: var(--gray-50);
 
 		--ring: var(--gray-200);
-
-		--radius: 0.5rem;
 	}
 
 	.dark {
@@ -77,7 +70,155 @@
 		--destructive-foreground: var(--gray-50);
 
 		--ring: var(--gray-500);
+	}
+}
 
-		--radius: 0.5rem;
+@theme {
+	/* Breakpoints */
+	--breakpoint-xs: 30rem;
+	--breakpoint-sm: 40rem;
+	--breakpoint-md: 48rem;
+	--breakpoint-lg: 64rem;
+	--breakpoint-xl: 80rem;
+	--breakpoint-2xl: 90rem;
+	--breakpoint-3xl: 96rem;
+	--breakpoint-4xl: 120rem;
+
+	/* Semantic colors */
+	--color-border: hsl(var(--border));
+	--color-input: hsl(var(--input));
+	--color-ring: hsl(var(--ring));
+	--color-background: hsl(var(--background));
+	--color-foreground: hsl(var(--foreground));
+	--color-primary: hsl(var(--primary));
+	--color-primary-foreground: hsl(var(--primary-foreground));
+	--color-secondary: hsl(var(--secondary));
+	--color-secondary-foreground: hsl(var(--secondary-foreground));
+	--color-destructive: hsl(var(--destructive));
+	--color-destructive-foreground: hsl(var(--destructive-foreground));
+	--color-muted: hsl(var(--muted));
+	--color-muted-foreground: hsl(var(--muted-foreground));
+	--color-accent: hsl(var(--accent));
+	--color-accent-foreground: hsl(var(--accent-foreground));
+	--color-popover: hsl(var(--popover));
+	--color-popover-foreground: hsl(var(--popover-foreground));
+	--color-card: hsl(var(--card));
+	--color-card-accent: hsl(var(--card-accent));
+	--color-card-foreground: hsl(var(--card-foreground));
+
+	/* Font sizes */
+	--text-sm: 0.875rem;
+	--text-sm--line-height: 1.125rem;
+	--text-base: 1rem;
+	--text-base--line-height: 1.3125rem;
+	--text-lg: 1.125rem;
+	--text-lg--line-height: 1.5rem;
+	--text-h6: 1.25rem;
+	--text-h6--line-height: 1.75rem;
+	--text-h5: 1.5rem;
+	--text-h5--line-height: 2rem;
+	--text-h4: 1.75rem;
+	--text-h4--line-height: 2.25rem;
+	--text-h3: 2rem;
+	--text-h3--line-height: 2.5rem;
+	--text-h2: 3.5rem;
+	--text-h2--line-height: 4rem;
+	--text-h1: 4.5rem;
+	--text-h1--line-height: 5rem;
+
+	/* Font families */
+	--font-sans: ui-sans-serif, system-ui, sans-serif;
+	--font-alliance-no2: 'Alliance No.2', sans-serif;
+	--font-geist-sans: 'Geist', ui-sans-serif, system-ui, sans-serif;
+	--font-geist-mono: 'Geist Mono', ui-monospace, monospace;
+
+	/* Border radius */
+	--radius-xs: 0rem;
+	--radius-sm: 0.25rem;
+	--radius: 0.5rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 0.75rem;
+	--radius-xl: 1rem;
+
+	/* Box shadows */
+	--shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1), 0px 4px 6px 0px rgba(0, 0, 0, 0.05);
+	--shadow-xs: 0px 1px 2px 0px rgba(0, 0, 0, 0.06), 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+	--shadow-sm: 0px 2px 4px 0px rgba(0, 0, 0, 0.06), 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+	--shadow-md: 0px 10px 15px 0px rgba(0, 0, 0, 0.1), 0px 4px 6px 0px rgba(0, 0, 0, 0.05);
+	--shadow-lg: 0px 20px 25px 0px rgba(0, 0, 0, 0.1), 0px 10px 10px 0px rgba(0, 0, 0, 0.04);
+	--shadow-xl: 0px 25px 50px 0px rgba(0, 0, 0, 0.25);
+	--shadow-inner: 0px 4px 4px 0px rgba(0, 0, 0, 0.06) inset;
+
+	/* Opacity */
+	--opacity-2\.5: 0.025;
+
+	/* Animations */
+	--animate-accordion-down: accordion-down 0.2s ease-out;
+	--animate-accordion-up: accordion-up 0.2s ease-out;
+	--animate-slide-down: slide-down 1.5s ease-out;
+	--animate-slide-up: slide-up 1.5s ease-out;
+	--animate-fade-in: fade-in 1.5s ease-out;
+	--animate-fade-out: fade-out 1.5s ease-out;
+}
+
+@keyframes accordion-down {
+	from {
+		height: 0;
+	}
+	to {
+		height: var(--radix-accordion-content-height);
+	}
+}
+
+@keyframes accordion-up {
+	from {
+		height: var(--radix-accordion-content-height);
+	}
+	to {
+		height: 0;
+	}
+}
+
+@keyframes fade-in {
+	0%,
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	0%,
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes slide-down {
+	0%,
+	50% {
+		transform: translateY(-100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-up {
+	0%,
+	50% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
 	}
 }
