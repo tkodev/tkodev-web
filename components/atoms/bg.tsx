@@ -2,7 +2,7 @@ import { forwardRef, HTMLAttributes } from 'react'
 import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
-  root: cva('h-full w-full bg-center', {
+  root: cva('h-full w-full', {
     variants: {
       variant: {
         gradient: [
@@ -38,17 +38,13 @@ const styles = {
       position: {
         center: 'bg-center',
         top: 'bg-top'
-      },
-      overlay: {
-        true: 'pointer-events-none fixed top-0 left-0 z-50'
       }
     },
     defaultVariants: {
       variant: 'sand',
       size: 'cover',
       attach: 'local',
-      position: 'center',
-      overlay: false
+      position: 'center'
     }
   })
 }
@@ -57,12 +53,12 @@ type BgRef = HTMLDivElement
 type BgProps = HTMLAttributes<BgRef> & VariantProps<typeof styles.root>
 
 const Bg = forwardRef<BgRef, BgProps>((props, ref) => {
-  const { variant, size, attach, position, overlay, className, ...rest } = props
+  const { variant, size, attach, position, className, ...rest } = props
 
   return (
     <div
       ref={ref}
-      className={cn(styles.root({ variant, size, attach, position, overlay, className }))}
+      className={cn(styles.root({ variant, size, attach, position, className }))}
       {...rest}
     />
   )

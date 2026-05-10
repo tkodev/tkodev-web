@@ -2,32 +2,20 @@
 
 import Link from 'next/link'
 import { FC, HTMLAttributes } from 'react'
-import {
-  DotIcon,
-  FileUserIcon,
-  GithubIcon,
-  LinkedinIcon,
-  MailIcon,
-  MusicIcon,
-  PauseIcon,
-  PlayIcon,
-  SunMoonIcon
-} from 'lucide-react'
-import { profileEntries } from '@/constants/profile'
+import { MusicIcon, PauseIcon, PlayIcon, SunMoonIcon } from 'lucide-react'
 import { useTheme } from '@/hooks/theme'
 import { useBgmContext } from '@/providers/bgm'
-import { NavEntry } from '@/types/layout'
 import { cn, cva, type VariantProps } from '@/utils/theme'
 import { Button } from '../atoms/button'
 import { Icon } from '../atoms/icon'
-import { Nav } from '../molecules/nav'
 
 const styles = {
   root: cva(['z-10 h-auto w-full', 'fixed bottom-0 left-0']),
   fade: cva([
     'pointer-events-none h-[96px] w-full',
-    'bg-background gradient-mask-t-10 fixed -bottom-[2px] left-0 backdrop-blur-xl backdrop-filter'
+    'bg-background gradient-mask-t-10 fixed -bottom-[2px] left-0'
   ]),
+  blur: cva(['pointer-events-none h-24 w-full', 'fixed -bottom-0.5 left-0']),
   container: cva([
     'fixed bottom-4 left-1/2 mx-auto -translate-x-1/2 px-4',
     'z-10 h-auto w-full max-w-[1280px]'
@@ -50,34 +38,6 @@ const styles = {
   bgm: cva('hidden sm:flex')
 }
 
-const navItems: NavEntry[] = [
-  {
-    href: profileEntries.tony.linkedin,
-    icon: LinkedinIcon,
-    variant: 'ghost',
-    size: 'icon'
-  },
-  {
-    href: profileEntries.tony.github,
-    icon: GithubIcon,
-    variant: 'ghost',
-    size: 'icon'
-  },
-  {
-    href: `mailto:${profileEntries.tony.email}`,
-    icon: MailIcon,
-    variant: 'ghost',
-    size: 'icon'
-  },
-  {
-    href: '/files/tony-ko-resume-2026.pdf',
-    icon: FileUserIcon,
-    variant: 'ghost',
-    size: 'icon'
-  },
-  { icon: DotIcon }
-]
-
 type FooterProps = HTMLAttributes<HTMLDivElement> & VariantProps<typeof styles.bar>
 
 const Footer: FC<FooterProps> = (props) => {
@@ -88,6 +48,18 @@ const Footer: FC<FooterProps> = (props) => {
 
   return (
     <footer className={cn(styles.root({ className }))} {...rest}>
+      {[
+        { blur: 'backdrop-blur-[2px]', stop: '0%' },
+        { blur: 'backdrop-blur-[4px]', stop: '25%' },
+        { blur: 'backdrop-blur-[8px]', stop: '50%' },
+        { blur: 'backdrop-blur-[16px]', stop: '75%' }
+      ].map(({ blur, stop }) => (
+        <div
+          key={stop}
+          className={cn(styles.blur(), blur)}
+          style={{ maskImage: `linear-gradient(to bottom, transparent ${stop}, black)` }}
+        />
+      ))}
       <div className={cn(styles.fade())} />
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar({ variant }))}>
@@ -106,11 +78,9 @@ const Footer: FC<FooterProps> = (props) => {
             </Button>
           </div>
           <div className={cn(styles.right())}>
-            <Nav items={navItems}>
-              <Button size="icon" variant="ghost" onClick={handleThemeModeToggle}>
-                <Icon icon={SunMoonIcon} />
-              </Button>
-            </Nav>
+            <Button size="icon" variant="ghost" onClick={handleThemeModeToggle}>
+              <Icon icon={SunMoonIcon} />
+            </Button>
           </div>
         </div>
       </div>

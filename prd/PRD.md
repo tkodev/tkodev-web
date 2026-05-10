@@ -44,12 +44,13 @@ through an immersive, design-forward experience.
 | `/works/[projectIdPath]`    | Project Detail     | —          | Individual project deep-dive       |
 | `/shots`                    | Shots              | Shots      | Photography / creative gallery     |
 | `/archive`                  | Archive            | Archive    | Legacy / older work                |
+| `/contact`                  | Contact            | Contact    | Outreach links (social, resume)    |
 | `/loading`                  | Loading Screen     | —          | Lifecycle intro animation route    |
 
 ### 2.2 Navigation
 
 The global `Header` component contains the primary nav. Nav items link to:
-`/profile`, `/works`, `/shots`, `/archive`.
+`/profile`, `/works`, `/shots`, `/contact`.
 
 The `/` home page and `/loading` screen are not in the nav. The `/works/[projectIdPath]`
 detail page is accessed only from `/works`.
@@ -224,6 +225,7 @@ Profiles represent collaborators credited on projects.
 - [Project Detail](pages/works/project.md) — `/works/[projectIdPath]`
 - [Shots](pages/shots.md) — `/shots`
 - [Archive](pages/archive.md) — `/archive`
+- [Contact](pages/contact.md) — `/contact`
 
 ---
 
