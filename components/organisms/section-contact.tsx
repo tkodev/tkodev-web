@@ -37,6 +37,7 @@ const styles = {
   tableTitleHead: cva('w-[30%]'),
   tableHead: cva('w-[30%]'),
   tableCellChannel: cva('flex items-center gap-4'),
+  tableCellValue: cva('align-middle'),
 
   note: cva('text-muted-foreground text-sm')
 }
@@ -135,7 +136,7 @@ const SectionContact = forwardRef<SectionContactRef, SectionContactProps>((props
                 <Icon icon={icon} size="xs" />
                 {label}
               </TableCell>
-              <TableCell>
+              <TableCell className={cn(styles.tableCellValue())}>
                 <Link href={href(tony)} target={external ? '_blank' : undefined}>
                   {value}
                 </Link>
