@@ -10,8 +10,6 @@ import { LifecycleProvider } from '@/providers/lifecycle'
 import { ThemeProvider } from '@/providers/theme'
 import { cn, cva } from '@/utils/theme'
 import '../themes/theme.css'
-import '../themes/theme-colors.css'
-import '../themes/theme-utils.css'
 
 const styles = {
   html: cva('h-full w-full scroll-smooth'),

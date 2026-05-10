@@ -1,6 +1,4 @@
 
-@reference './theme.css';
-
 * {
   @apply border-border;
 }
