@@ -13,7 +13,7 @@ const styles = {
       height: 'full'
     }
   }),
-  overlay: cva('absolute top-0 left-0 -z-1 h-full w-full'),
+  overlay: cva('absolute top-0 left-0 h-full w-full'),
   content: cva('relative mx-auto w-full max-w-full grow px-8 py-[96px] lg:py-[128px]', {
     variants: {
       width: {
