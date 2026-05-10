@@ -4,6 +4,7 @@ import {
   CameraIcon,
   DotIcon,
   DraftingCompassIcon,
+  MailIcon,
   NotebookPenIcon,
   ScanFaceIcon
 } from 'lucide-react'
@@ -16,9 +17,10 @@ import { Nav } from '../molecules/nav'
 const styles = {
   root: cva(['z-10 h-auto w-full', 'fixed top-0 left-0']),
   fade: cva([
-    'pointer-events-none h-[96px] w-full',
-    'bg-background gradient-mask-b-10 fixed -top-[2px] left-0 backdrop-blur-xl backdrop-filter'
+    'pointer-events-none h-24 w-full',
+    'bg-background gradient-mask-b-10 fixed -top-0.5 left-0'
   ]),
+  blur: cva(['pointer-events-none h-24 w-full', 'fixed -top-0.5 left-0']),
   container: cva([
     'h-auto w-full max-w-[1280px]',
     'fixed top-4 left-1/2 mx-auto -translate-x-1/2 px-4'
@@ -48,6 +50,7 @@ const navItems: NavEntry[] = [
   { href: '/profile', name: 'Profile', icon: ScanFaceIcon, variant: 'ghost' },
   { href: '/works', name: 'Works', icon: DraftingCompassIcon, variant: 'ghost' },
   { href: '/shots', name: 'Shots', icon: CameraIcon, variant: 'ghost' },
+  { href: '/contact', name: 'Contact', icon: MailIcon, variant: 'ghost' },
   {
     href: '/blog',
     name: 'Blog',
@@ -65,6 +68,18 @@ const Header: FC<HeaderProps> = (props) => {
 
   return (
     <header className={cn(styles.root({ className }))} {...rest}>
+      {[
+        { blur: 'backdrop-blur-[2px]', stop: '0%' },
+        { blur: 'backdrop-blur-[4px]', stop: '25%' },
+        { blur: 'backdrop-blur-[8px]', stop: '50%' },
+        { blur: 'backdrop-blur-[16px]', stop: '75%' }
+      ].map(({ blur, stop }) => (
+        <div
+          key={stop}
+          className={cn(styles.blur(), blur)}
+          style={{ maskImage: `linear-gradient(to top, transparent ${stop}, black)` }}
+        />
+      ))}
       <div className={cn(styles.fade())} />
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar({ variant }))}>

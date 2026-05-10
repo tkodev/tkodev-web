@@ -8,15 +8,19 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(
-    'bg-background relative flex h-full w-full items-center justify-center overflow-hidden border'
+    'bg-muted relative flex h-auto w-full items-center justify-center overflow-hidden rounded-xl border shadow-md',
+    {
+      variants: {
+        aspect: {
+          video: 'aspect-video',
+          square: 'aspect-square'
+        }
+      }
+    }
   ),
   icon: cva('absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15'),
   comp: cva('relative h-auto max-h-full w-full max-w-full', {
     variants: {
-      aspect: {
-        video: 'aspect-video',
-        square: 'aspect-square'
-      },
       fill: {
         contain: 'object-contain',
         cover: 'object-cover'
@@ -33,6 +37,7 @@ const styles = {
 
 type MediaRef = HTMLImageElement
 type MediaProps = HTMLAttributes<MediaRef> &
+  VariantProps<typeof styles.root> &
   VariantProps<typeof styles.comp> & {
     mediaEntry: MediaEntry
   }
@@ -45,13 +50,9 @@ const Media: FC<MediaProps> = (props) => {
   const Comp = type === 'image' ? Image : Video
 
   return (
-    <div className={cn(styles.root({ className }))}>
+    <div className={cn(styles.root({ aspect, className }))}>
       <Icon className={cn(styles.icon())} icon={FileIcon} size="xl" />
-      <Comp
-        className={cn(styles.comp({ aspect, fill, isHover }))}
-        {...mediaProps}
-        alt={mediaProps.alt}
-      />
+      <Comp className={cn(styles.comp({ fill, isHover }))} {...mediaProps} alt={mediaProps.alt} />
     </div>
   )
 }
