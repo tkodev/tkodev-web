@@ -9,6 +9,7 @@ type JobId =
   | 'quantumMobSoftwareEngineerI'
   | 'brandfireIntermediateFrontEndDeveloper'
   | 'kosInteriorDesignInteriorDesigner'
+  | 'techtankToDigitalLeadOrganizer'
 
 type JobEntry = {
   id: JobId

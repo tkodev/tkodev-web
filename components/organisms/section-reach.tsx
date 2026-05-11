@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { forwardRef, HTMLAttributes } from 'react'
-import { GithubIcon, LinkedinIcon, MailIcon, PhoneIcon } from 'lucide-react'
+import { FileUserIcon, GithubIcon, LinkedinIcon, MailIcon, PhoneIcon } from 'lucide-react'
 import { Bg } from '@/components/atoms/bg'
 import { Button } from '@/components/atoms/button'
 import { Icon } from '@/components/atoms/icon'
@@ -68,6 +68,11 @@ const SectionReach = forwardRef<SectionReachRef, SectionReachProps>((props, ref)
           <Button size="lg" asChild>
             <Link href={`mailto:${profileEntries.tony.phone}`} target="_blank">
               <Icon icon={PhoneIcon} /> Phone: <u>+1 (647) 300-9787</u>
+            </Link>
+          </Button>
+          <Button size="lg" asChild>
+            <Link href="/files/tony-ko-resume-2026.pdf" target="_blank">
+              <Icon icon={FileUserIcon} /> Resume: <u>tony-ko-resume-2026.pdf</u>
             </Link>
           </Button>
         </div>

@@ -30,6 +30,7 @@ type ProjectId =
   | 'interiorsArchitecture'
   | 'web10Era'
   | 'industrialDesign'
+  | 'techtankToWebsite'
 
 type ProjectRole = 'development' | 'design'
 

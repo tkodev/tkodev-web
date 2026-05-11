@@ -58,7 +58,7 @@ const SectionJobs = forwardRef<SectionJobsRef, SectionJobsProps>((props, ref) =>
         </div>
         <div className={cn(styles.jobs())}>
           {jobEntries
-            .slice(0, 3)
+            .slice(0, 8)
             .map(({ companyId, companyName, title, startDate, endDate, location }, index) => {
               const clientEntry = clientEntries[companyId]
               return (
