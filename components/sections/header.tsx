@@ -69,10 +69,10 @@ const Header: FC<HeaderProps> = (props) => {
   return (
     <header className={cn(styles.root({ className }))} {...rest}>
       {[
-        { blur: 'backdrop-blur-[2px]', stop: '0%' },
-        { blur: 'backdrop-blur-[4px]', stop: '33%' },
-        { blur: 'backdrop-blur-[8px]', stop: '66%' },
-        { blur: 'backdrop-blur-[16px]', stop: '95%' }
+        { blur: 'backdrop-blur-[8px]', stop: '0%' },
+        { blur: 'backdrop-blur-[12px]', stop: '25%' },
+        { blur: 'backdrop-blur-[16px]', stop: '50%' },
+        { blur: 'backdrop-blur-[20px]', stop: '75%' }
       ].map(({ blur, stop }) => (
         <div
           key={stop}

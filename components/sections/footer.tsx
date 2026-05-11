@@ -2,7 +2,9 @@
 
 import Link from 'next/link'
 import { FC, HTMLAttributes } from 'react'
+import { formatInTimeZone } from 'date-fns-tz'
 import { MusicIcon, PauseIcon, PlayIcon, SunMoonIcon } from 'lucide-react'
+import { appTimeZone } from '@/constants/date'
 import { useTheme } from '@/hooks/theme'
 import { useBgmContext } from '@/providers/bgm'
 import { cn, cva, type VariantProps } from '@/utils/theme'
@@ -44,15 +46,16 @@ const Footer: FC<FooterProps> = (props) => {
   const { variant, className, ...rest } = props
 
   const { isPlaying, toggle } = useBgmContext()
-  const { handleThemeModeToggle } = useTheme()
+  const { theme, handleThemeModeToggle } = useTheme()
+  const year = formatInTimeZone(new Date(), appTimeZone, 'yyyy')
 
   return (
     <footer className={cn(styles.root({ className }))} {...rest}>
       {[
-        { blur: 'backdrop-blur-[2px]', stop: '0%' },
-        { blur: 'backdrop-blur-[4px]', stop: '33%' },
-        { blur: 'backdrop-blur-[8px]', stop: '66%' },
-        { blur: 'backdrop-blur-[16px]', stop: '95%' }
+        { blur: 'backdrop-blur-[8px]', stop: '0%' },
+        { blur: 'backdrop-blur-[12px]', stop: '25%' },
+        { blur: 'backdrop-blur-[16px]', stop: '50%' },
+        { blur: 'backdrop-blur-[20px]', stop: '75%' }
       ].map(({ blur, stop }) => (
         <div
           key={stop}
@@ -64,7 +67,7 @@ const Footer: FC<FooterProps> = (props) => {
       <div className={cn(styles.container())}>
         <div className={cn(styles.bar({ variant }))}>
           <div className={cn(styles.left())}>
-            <Button size="icon" variant={isPlaying ? 'secondary' : 'ghost'} onClick={toggle}>
+            <Button variant={isPlaying ? 'secondary' : 'ghost'} onClick={toggle}>
               <Icon icon={isPlaying ? PauseIcon : PlayIcon} />
             </Button>
             <Button className={cn(styles.bgm())} size="none" variant="link" asChild>
@@ -78,8 +81,15 @@ const Footer: FC<FooterProps> = (props) => {
             </Button>
           </div>
           <div className={cn(styles.right())}>
-            <Button size="icon" variant="ghost" onClick={handleThemeModeToggle}>
+            <p className={cn(styles.bgm(), 'text-muted-foreground text-xs')}>
+              © {year} Tony Ko — AGPL
+            </p>
+            <Button
+              variant={theme === 'dark' ? 'secondary' : 'ghost'}
+              onClick={handleThemeModeToggle}
+            >
               <Icon icon={SunMoonIcon} />
+              {theme === 'light' ? 'Light' : 'Dark'}
             </Button>
           </div>
         </div>
