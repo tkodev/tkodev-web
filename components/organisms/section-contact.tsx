@@ -9,6 +9,7 @@ import {
   PhoneIcon
 } from 'lucide-react'
 import { Bg } from '@/components/atoms/bg'
+import { Button } from '@/components/atoms/button'
 import { Hypertext } from '@/components/atoms/hypertext'
 import { Icon } from '@/components/atoms/icon'
 import { Section } from '@/components/molecules/section'
@@ -137,9 +138,11 @@ const SectionContact = forwardRef<SectionContactRef, SectionContactProps>((props
                 {label}
               </TableCell>
               <TableCell className={cn(styles.tableCellValue())}>
-                <Link href={href(tony)} target={external ? '_blank' : undefined}>
-                  {value}
-                </Link>
+                <Button variant="default" asChild>
+                  <Link href={href(tony)} target={external ? '_blank' : undefined}>
+                    {value}
+                  </Link>
+                </Button>
               </TableCell>
             </TableRow>
           ))}

@@ -29,7 +29,7 @@ const styles = {
 
   header: cva('flex w-full max-w-screen items-center justify-center gap-4 border-b p-8'),
   stage: cva('relative flex min-h-0 w-full items-center justify-center p-8'),
-  footer: cva('max-h-48 overflow-scroll border-t p-8 pb-4'),
+  footer: cva('max-h-48 overflow-y-auto border-t p-8 pb-4'),
 
   thumbnails: cva('flex gap-2 overflow-x-auto'),
   thumb: cva('w-16 shrink-0 cursor-pointer overflow-hidden opacity-50 transition-opacity', {

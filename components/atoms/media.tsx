@@ -8,7 +8,7 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva(
-    'bg-muted relative flex h-auto w-full items-center justify-center overflow-hidden rounded-xl border shadow-md'
+    'bg-muted relative flex h-auto max-h-full w-full max-w-full items-center justify-center overflow-hidden rounded-xl border'
   ),
   icon: cva('absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15'),
   comp: cva('relative h-auto max-h-full w-full max-w-full', {
