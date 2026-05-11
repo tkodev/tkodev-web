@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import { GoogleAnalytics } from '@next/third-parties/google'
 import { FC, ReactNode } from 'react'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Layout } from '@/components/templates/layout'
 import { allianceNo2Font } from '@/fonts/alliance-no2'
 import { geistSansFont } from '@/fonts/geist'
@@ -86,7 +87,8 @@ const LayoutPage: FC<LayoutPageProps> = (props) => {
             <Layout>{children}</Layout>
           </BgmProvider>
         </ThemeProvider>
-        <GoogleAnalytics gaId="G-JS1RYYY0W2" />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
