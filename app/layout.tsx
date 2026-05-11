@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { FC, ReactNode } from 'react'
 import { Layout } from '@/components/templates/layout'
 import { allianceNo2Font } from '@/fonts/alliance-no2'
@@ -85,6 +86,7 @@ const LayoutPage: FC<LayoutPageProps> = (props) => {
             <Layout>{children}</Layout>
           </BgmProvider>
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-JS1RYYY0W2" />
       </body>
     </html>
   )
