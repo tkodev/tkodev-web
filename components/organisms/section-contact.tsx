@@ -127,7 +127,7 @@ const SectionContact = forwardRef<SectionContactRef, SectionContactProps>((props
         <TableHeader>
           <TableRow>
             <TableHead className={cn(styles.tableTitleHead())}>Channel</TableHead>
-            <TableHead className={cn(styles.tableHead())}>Handle / Value</TableHead>
+            <TableHead className={cn(styles.tableHead())}>Handle</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

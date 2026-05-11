@@ -6,7 +6,7 @@ import { cn, cva, VariantProps } from '@/utils/theme'
 
 const styles = {
   root: cva('relative h-full w-auto'),
-  img: cva('absolute top-0 left-0 h-auto w-full', {
+  img: cva('absolute top-0 left-0 h-auto w-full grayscale', {
     variants: {
       variant: {
         light: 'block dark:hidden',

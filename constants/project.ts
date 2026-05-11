@@ -1265,6 +1265,90 @@ const projectEntries: Record<ProjectId, ProjectEntry> = {
     ],
     isFeatured: true
   },
+  techtankToWebsite: {
+    id: 'techtankToWebsite',
+    roles: ['development', 'design'],
+    media: [
+      {
+        type: 'image',
+        src: '/images/projects/techtankto/1d7bbc4a-c4e2-4643-b3f3-1174ff1076b3.jpg',
+        width: 2048,
+        height: 1536,
+        alt: 'TechTank Toronto - Community Event'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/techtankto/next.techtankto.com_(iPad%20Pro).png',
+        width: 2732,
+        height: 2048,
+        alt: 'TechTank Toronto - Website Redesign Tablet Preview'
+      }
+    ],
+    frames: [
+      {
+        type: 'image',
+        src: '/images/projects/techtankto/next.techtankto.com_(iPad%20Pro).png',
+        width: 2732,
+        height: 2048,
+        alt: 'TechTank Toronto - Website Redesign Tablet',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/techtankto/next.techtankto.com_(iPad%20Pro)%20(1).png',
+        width: 2732,
+        height: 2048,
+        alt: 'TechTank Toronto - Website Redesign Tablet',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/techtankto/next.techtankto.com_(iPad%20Pro)%20(2).png',
+        width: 2732,
+        height: 2048,
+        alt: 'TechTank Toronto - Website Redesign Tablet',
+        frameId: 'desktop'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/techtankto/next.techtankto.com_(iPhone%2014%20Pro%20Max).png',
+        width: 1290,
+        height: 2796,
+        alt: 'TechTank Toronto - Website Redesign Mobile',
+        frameId: 'mobile'
+      },
+      {
+        type: 'image',
+        src: '/images/projects/techtankto/next.techtankto.com_(iPhone%2014%20Pro%20Max)%20(1).png',
+        width: 1290,
+        height: 2796,
+        alt: 'TechTank Toronto - Website Redesign Mobile',
+        frameId: 'mobile'
+      }
+    ],
+    title: 'TechTank Toronto Community Website',
+    intro:
+      'TechTank Toronto is a volunteer-run community supporting Toronto-area tech enthusiasts through mentorship, educational events, and social networking. As Digital Lead & Organizer, I led a complete rewrite of the community website alongside brand, content, and digital growth initiatives.',
+    desc: 'As Digital Lead & Organizer at TechTank Toronto, I managed digital and content projects to drive brand awareness and community growth, leading a small team of software engineers, content creators, and volunteers. I designed graphics and established a cohesive social media brand identity, wrote engaging copy to grow audience reach, and captured event photography to fuel compelling campaign content. On the technical side, I led the complete rewrite of the TechTank website — modernizing the stack, improving information architecture, and creating a conversion-oriented experience that channels visitors into active community roles. I also presented technical talks at events, covering topics from browser extensions to engineering best practices.',
+    clientId: 'techtankTo',
+    profileIds: ['tony'],
+    startDate: fromZonedTime('2024-10-01', appTimeZone),
+    skills: [
+      'Next.js',
+      'TypeScript',
+      'Community Building',
+      'Brand Identity',
+      'Social Media',
+      'Copywriting',
+      'Event Photography',
+      'Graphic Design',
+      'Technical Talks',
+      'Team Leadership',
+      'Content Strategy',
+      'Web Design'
+    ],
+    isFeatured: true
+  },
   industrialDesign: {
     id: 'industrialDesign',
     roles: ['design'],
@@ -1491,7 +1575,8 @@ const projectIds: ProjectId[] = [
   'earlySoftwareEngineering',
   'web10Era',
   'interiorsArchitecture',
-  'industrialDesign'
+  'industrialDesign',
+  'techtankToWebsite'
 ]
 
 export { projectEntries, projectIds }

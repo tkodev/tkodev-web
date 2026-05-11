@@ -33,6 +33,14 @@ const clientEntries: Record<ClientId, ClientEntry> = {
     lightSrc: '/images/companies/badal/light@1x.png',
     darkSrc: '/images/companies/badal/dark@1x.png'
   },
+  loblawsDigital: {
+    id: 'loblawsDigital',
+    name: 'Loblaw Digital',
+    href: 'https://loblawdigital.ca/',
+    baseSrc: '/images/companies/loblaws-digital/base@1x.png',
+    lightSrc: '/images/companies/loblaws-digital/light@1x.png',
+    darkSrc: '/images/companies/loblaws-digital/dark@1x.png'
+  },
   beyond: {
     id: 'beyond',
     name: 'Beyond',
@@ -144,11 +152,21 @@ const clientEntries: Record<ClientId, ClientEntry> = {
     baseSrc: '',
     lightSrc: '',
     darkSrc: ''
+  },
+  techtankTo: {
+    id: 'techtankTo',
+    name: 'TechTank Toronto',
+    href: 'https://www.techtankto.com/',
+    baseSrc: '/images/companies/techtankto/base@1x.png',
+    lightSrc: '/images/companies/techtankto/light@1x.png',
+    darkSrc: '/images/companies/techtankto/dark@1x.png'
   }
 }
 
 const clientIds: ClientId[] = [
   'badal',
+  'loblawsDigital',
+  'techtankTo',
   'quantumMob',
   'rewardops',
   'brandfire',

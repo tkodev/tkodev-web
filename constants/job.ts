@@ -4,6 +4,27 @@ import { JobEntry } from '@/types/job'
 
 const jobEntries: JobEntry[] = [
   {
+    id: 'techtankToDigitalLeadOrganizer',
+    companyId: 'techtankTo',
+    companyName: 'TechTank Toronto',
+    title: 'Digital Lead & Organizer',
+    location: 'Toronto, Ontario, Canada · Volunteer',
+    startDate: fromZonedTime('2024-10-01', appTimeZone),
+    skills: [
+      'Community Building',
+      'Event Organization',
+      'Technical Talks',
+      'Team Leadership',
+      'Content Strategy',
+      'Brand Identity',
+      'Social Media',
+      'Copywriting',
+      'Event Photography',
+      'Graphic Design',
+      'Mentorship'
+    ]
+  },
+  {
     id: 'badalSeniorSoftwareEngineer',
     companyId: 'badal',
     companyName: 'Badal.io',
