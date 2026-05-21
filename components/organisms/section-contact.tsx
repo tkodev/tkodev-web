@@ -81,10 +81,10 @@ const links: LinkEntry[] = [
     external: false
   },
   {
-    href: () => '/files/tony-ko-resume-2026.pdf',
+    href: () => '/files/tony-ko-resume-staff-software-engineer.pdf',
     icon: FileUserIcon,
     label: 'Resume',
-    value: 'tony-ko-resume-2026.pdf',
+    value: 'tony-ko-resume-staff-software-engineer.pdf',
     external: true
   }
 ]

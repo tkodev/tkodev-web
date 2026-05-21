@@ -71,8 +71,8 @@ const SectionReach = forwardRef<SectionReachRef, SectionReachProps>((props, ref)
             </Link>
           </Button>
           <Button size="lg" asChild>
-            <Link href="/files/tony-ko-resume-2026.pdf" target="_blank">
-              <Icon icon={FileUserIcon} /> Resume: <u>tony-ko-resume-2026.pdf</u>
+            <Link href="/files/tony-ko-resume-staff-software-engineer.pdf" target="_blank">
+              <Icon icon={FileUserIcon} /> Resume: <u>tony-ko-resume-staff-software-engineer.pdf</u>
             </Link>
           </Button>
         </div>
