@@ -48,7 +48,7 @@ const styles = {
   avatar: cva([
     'h-auto w-[50%]',
     'absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2',
-    'transition-all duration-1000 hover:scale-105 hover:grayscale'
+    'transition-all duration-1000 hover:scale-105'
   ]),
 
   cta: cva('mt-2')
