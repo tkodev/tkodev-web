@@ -38,3 +38,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# vendored skills (local-machine symlink, not portable)
+.claude/skills
+.agents/skills
