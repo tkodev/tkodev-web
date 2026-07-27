@@ -1,3 +1,10 @@
+# tkodev-web-v4
+
+A Next.js (App Router) implementation of [tko.dev](https://tko.dev/), Tony Ko's personal
+portfolio website — a polished, cinematic portfolio presenting Tony's career as a Staff
+Software Engineer, covering professional work, clients, employment history, photography
+shots, and personal design disciplines.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

@@ -2,6 +2,11 @@
 
 Guidance for Claude Code when working in this repository.
 
+This repo vendors shared standards skills from `/Users/xuser/notes/tkodev/harness-skills`
+via symlinks at `.claude/skills/` and `.agents/skills/` (accessibility, components, data,
+decisions, git, nextjs, performance, process, seo, testing, vscode, writing). See those
+skill folders for the standards themselves — they aren't restated here.
+
 ## What this repo is
 
 A Next.js (App Router) implementation of [tko.dev](https://tko.dev/), Tony Ko's personal
@@ -9,7 +14,7 @@ portfolio website. The site is a polished, cinematic portfolio that presents Ton
 as a Staff Software Engineer — covering professional work, clients, employment history,
 photography shots, and personal design disciplines (industrial design, architecture).
 
-Specs live in `prd/` (see `prd/PRD.md`); application code lives in `src/app/`, with
+Specs live in `docs/prd/` (see `docs/prd/PRD.md`); application code lives in `src/app/`, with
 shared components in `src/components/`, data in `src/constants/`, state in `src/stores/`,
 and CSS tokens in `src/themes/`.
 
@@ -20,16 +25,17 @@ For developer-facing setup (scripts, directory tree, route map), see [`README.md
 ```
 .
 ├── CLAUDE.md              # This file
-├── prd/
-│   ├── PRD.md             # Top-level product requirements document
-│   └── pages/             # One spec per route
-│       ├── home.md                # /
-│       ├── archive.md             # /archive
-│       ├── profile.md             # /profile
-│       ├── shots.md               # /shots
-│       └── works/
-│           ├── index.md           # /works
-│           └── project.md         # /works/[projectIdPath]
+├── docs/
+│   └── prd/
+│       ├── PRD.md             # Top-level product requirements document
+│       └── pages/             # One spec per route
+│           ├── home.md                # /
+│           ├── archive.md             # /archive
+│           ├── profile.md             # /profile
+│           ├── shots.md               # /shots
+│           └── works/
+│               ├── index.md           # /works
+│               └── project.md         # /works/[projectIdPath]
 └── src/
     ├── app/               # Next.js App Router pages
     │   ├── layout.tsx     # Root layout (providers, fonts, metadata)
@@ -56,8 +62,8 @@ For developer-facing setup (scripts, directory tree, route map), see [`README.md
     └── utils/             # Utility functions (date, string, theme, timer)
 ```
 
-`prd/PRD.md` is the top-level document. Each file in `prd/pages/` fully describes one
-route. The file tree under `prd/pages/` mirrors the final URL structure.
+`docs/prd/PRD.md` is the top-level document. Each file in `docs/prd/pages/` fully describes one
+route. The file tree under `docs/prd/pages/` mirrors the final URL structure.
 
 ## How the information architecture works
 
@@ -188,20 +194,20 @@ not be active. Only activate via the root layout font variable if required.
    pages are siblings of `/profile`, `/shots`, `/archive`.
 2. Create `src/app/<path>/page.tsx` following the existing page structure (import the
    relevant organism section, wrap in `<Main>`).
-3. Create `prd/pages/<path>.md` following the existing section structure.
-4. Add the route to the Route map table in `prd/PRD.md` §2.
+3. Create `docs/prd/pages/<path>.md` following the existing section structure.
+4. Add the route to the Route map table in `docs/prd/PRD.md` §2.
 5. Update the header nav in `src/components/sections/header.tsx` if the page should
    appear in global navigation.
 
 ### Removing or renaming a page
 
-- Remove the `app/` directory, the `prd/pages/` file, and any nav references.
+- Remove the `app/` directory, the `docs/prd/pages/` file, and any nav references.
 - Use Grep to find all references to the route before deleting.
 
 ## Things to avoid
 
 - Don't let the implementation drift from the PRD. When behaviour or IA changes, update
-  both the relevant `prd/pages/*.md` spec and the matching `src/app/` code in the same
+  both the relevant `docs/prd/pages/*.md` spec and the matching `src/app/` code in the same
   change.
 - Don't use raw `new Date()` for project/job dates — always use `fromZonedTime` with
   `appTimeZone`.
