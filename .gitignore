@@ -40,5 +40,15 @@ yarn-error.log*
 next-env.d.ts
 
 # vendored skills (local-machine symlink, not portable)
+
+# Agent tooling - track shared config, ignore machine-local state
+
+# Agent tooling - machine-local state, not shared config
+.claude/settings.json
+.claude/settings.local.json
+.claude/worktrees/
+.agents/settings.json
+.agents/settings.local.json
+.agents/worktrees/
 .claude/skills
 .agents/skills
