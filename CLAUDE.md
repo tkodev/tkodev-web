@@ -2,7 +2,7 @@
 
 Guidance for Claude Code when working in this repository.
 
-This repo vendors shared standards skills from `/Users/xuser/notes/tkodev/harness-skills`
+This repo vendors shared standards skills from `/Users/xuser/notes/tkodev/software-skills`
 via symlinks at `.claude/skills/` and `.agents/skills/` (accessibility, components, data,
 decisions, git, nextjs, performance, process, seo, testing, vscode, writing). See those
 skill folders for the standards themselves — they aren't restated here.
